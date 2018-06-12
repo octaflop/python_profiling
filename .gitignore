@@ -1,0 +1,8 @@
+
+.ipynb_checkpoints/
+.pip_cache/
+*.pyc
+*.egg-info/
+*.swp
+/data/*
+!/data/README.md

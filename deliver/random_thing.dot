@@ -1,0 +1,29 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	1 [color="#f25402", fontcolor="#ffffff", fontsize="10.00", label="<ipython-input-28-eafebd25a04a>:4:setup_random_dict\n91.41%\n(20.71%)\n1×", tooltip="<ipython-input-28-eafebd25a04a>"];
+	1 -> 8 [arrowsize="0.46", color="#0c778e", fontcolor="#0c778e", fontsize="10.00", label="20.71%\n1×", labeldistance="0.83", penwidth="0.83"];
+	1 -> 11 [arrowsize="0.71", color="#0ab60a", fontcolor="#0ab60a", fontsize="10.00", label="50.00%\n40×", labeldistance="2.00", penwidth="2.00"];
+	2 [color="#0d1174", fontcolor="#ffffff", fontsize="10.00", label="~:0:<method 'bit_length' of 'int' objects>\n1.01%\n(1.01%)\n40×", tooltip="~"];
+	3 [color="#0c9492", fontcolor="#ffffff", fontsize="10.00", label="random:223:_randbelow\n25.25%\n(18.69%)\n40×", tooltip="/Users/faris.chebib/.virtualenvs/profiling/lib/python3.6/random.py"];
+	3 -> 2 [arrowsize="0.35", color="#0d1174", fontcolor="#0d1174", fontsize="10.00", label="1.01%\n40×", labeldistance="0.50", penwidth="0.50"];
+	3 -> 12 [arrowsize="0.35", color="#0d257a", fontcolor="#0d257a", fontsize="10.00", label="5.56%\n46×", labeldistance="0.50", penwidth="0.50"];
+	5 [color="#0c748d", fontcolor="#ffffff", fontsize="10.00", label="encoder:182:encode\n20.20%\n(3.54%)\n1×", tooltip="/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py"];
+	5 -> 7 [arrowsize="0.35", color="#0d0f73", fontcolor="#0d0f73", fontsize="10.00", label="0.51%\n2×", labeldistance="0.50", penwidth="0.50"];
+	5 -> 9 [arrowsize="0.40", color="#0c5c88", fontcolor="#0c5c88", fontsize="10.00", label="16.16%\n1×", labeldistance="0.65", penwidth="0.65"];
+	6 [color="#fe0500", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method builtins.exec>\n99.49%\n(7.58%)\n1×", tooltip="~"];
+	6 -> 14 [arrowsize="0.96", color="#f35002", fontcolor="#f35002", fontsize="10.00", label="91.92%\n1×", labeldistance="3.68", penwidth="3.68"];
+	7 [color="#0d0f73", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method builtins.isinstance>\n0.51%\n(0.51%)\n2×", tooltip="~"];
+	8 [color="#0c778e", fontcolor="#ffffff", fontsize="10.00", label="__init__:183:dumps\n20.71%\n(0.51%)\n1×", tooltip="/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py"];
+	8 -> 5 [arrowsize="0.45", color="#0c748d", fontcolor="#0c748d", fontsize="10.00", label="20.20%\n1×", labeldistance="0.81", penwidth="0.81"];
+	9 [color="#0c5c88", fontcolor="#ffffff", fontsize="10.00", label="encoder:204:iterencode\n16.16%\n(16.16%)\n1×", tooltip="/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py"];
+	10 [color="#0ba74d", fontcolor="#ffffff", fontsize="10.00", label="random:173:randrange\n39.39%\n(14.14%)\n40×", tooltip="/Users/faris.chebib/.virtualenvs/profiling/lib/python3.6/random.py"];
+	10 -> 3 [arrowsize="0.50", color="#0c9492", fontcolor="#0c9492", fontsize="10.00", label="25.25%\n40×", labeldistance="1.01", penwidth="1.01"];
+	11 [color="#0ab60a", fontcolor="#ffffff", fontsize="10.00", label="random:217:randint\n50.00%\n(10.61%)\n40×", tooltip="/Users/faris.chebib/.virtualenvs/profiling/lib/python3.6/random.py"];
+	11 -> 10 [arrowsize="0.63", color="#0ba74d", fontcolor="#0ba74d", fontsize="10.00", label="39.39%\n40×", labeldistance="1.58", penwidth="1.58"];
+	12 [color="#0d257a", fontcolor="#ffffff", fontsize="10.00", label="~:0:<method 'getrandbits' of '_random.Random' objects>\n5.56%\n(5.56%)\n46×", tooltip="~"];
+	13 [color="#0d0f73", fontcolor="#ffffff", fontsize="10.00", label="~:0:<method 'disable' of '_lsprof.Profiler' objects>\n0.51%\n(0.51%)\n1×", tooltip="~"];
+	14 [color="#f35002", fontcolor="#ffffff", fontsize="10.00", label="<string>:1:<module>\n91.92%\n(0.51%)\n1×", tooltip="<string>"];
+	14 -> 1 [arrowsize="0.96", color="#f25402", fontcolor="#f25402", fontsize="10.00", label="91.41%\n1×", labeldistance="3.66", penwidth="3.66"];
+}
