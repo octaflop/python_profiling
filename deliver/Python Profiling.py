@@ -92,7 +92,7 @@ generate_profile('random_thing')
 
 # ![random_thing](./random_thing.png)
 
-# ### Instead, we only decompose the function
+# ### Instead, we separate out the function we want
 
 # In[29]:
 
