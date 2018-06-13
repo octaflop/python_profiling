@@ -9,30 +9,27 @@
 
 # `cProfile`
 
-# In[24]:
+# In[5]:
+
+
+some_json = """
+[{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}}]
+"""
+
+
+# In[6]:
 
 
 import cProfile
 
 import json
 
-some_json = """
-[
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}},
-{"floors":[{"id":14,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"First Floor","description":""},{"id":15,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Mezzanine","description":null},{"id":11,"campus_id":12,"campus_name":"SweetCandy","building_id":12,"building_name":"SweetCandy","name":"Second Floor","description":""}],"meta":{"per_page":10,"total":3,"filtered_total":3,"page":1,"page_limit":100}}
-]
-"""
+# some_json = "[{"floors":[{"id":14,"campus_id":12, ...
 
 cProfile.run('json.loads(some_json)')
 
 
-# In[25]:
+# In[7]:
 
 
 # We can also save to a file and render an image
@@ -40,7 +37,7 @@ filename = 'json_loads'
 cProfile.run('json.loads(some_json)', filename=f'{filename}.profile')
 
 
-# In[26]:
+# In[8]:
 
 
 import sh
@@ -48,7 +45,7 @@ import sh
 sh.gprof2dot('-f', 'pstats', '-o', f'{filename}.dot', f'{filename}.profile')
 
 
-# In[27]:
+# In[9]:
 
 
 # Convert the .dot -> png
@@ -57,11 +54,13 @@ sh.dot('-T', 'png', f'{filename}.dot', '-o', f'{filename}.png')
 
 # ![profiled image](./json_loads.png)
 
+# ![profiled image](./json_loads.png)
+
 # ## More Python
 
 # ### We only want to measure what we care about.
 
-# In[28]:
+# In[10]:
 
 
 import random
@@ -94,7 +93,7 @@ generate_profile('random_thing')
 
 # ### Instead, we separate out the function we want
 
-# In[29]:
+# In[11]:
 
 
 import random
@@ -125,13 +124,15 @@ generate_profile('just_json')
 
 # ![just json](./just_json.png)
 
+# ![just json](./just_json.png)
+
 # ## Django
 # ### 10x Easier
 # https://pypi.org/project/yet-another-django-profiler/
 
 # Add to middleware:
 
-# In[30]:
+# In[12]:
 
 
 # local_settings.py
@@ -144,6 +145,11 @@ MIDDLEWARE_CLASSES += ('yet_another_django_profiler.middleware.ProfilerMiddlewar
 # https://ebdevi.io:8000/api/v4/deployment/filter/floors/11/rooms/?profile
 
 # ![profile_example](https://user-images.githubusercontent.com/6115/40940549-63d07bf8-6805-11e8-9417-548e2110722b.png)
+
+# 
+# 
+# ![profile_example](https://user-images.githubusercontent.com/6115/40940549-63d07bf8-6805-11e8-9417-548e2110722b.png)
+# 
 
 # ## Thanks
 # 

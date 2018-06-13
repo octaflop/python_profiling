@@ -1,2 +1,8 @@
-jupyter nbconvert Python\ Profiling.ipynb --to slides --post serve
+jupyter nbconvert Python\ Profiling.ipynb\
+  --to slides\
+  --reveal-prefix reveal.js\
+  --TagRemovePreprocessor.remove_input_tags='{"remove_input"}'\
+  --TagRemovePreprocessor.remove_single_output_tags='{"remove_input"}'\
+  --no-prompt\
+  --post serve;
 
